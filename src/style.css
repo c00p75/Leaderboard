@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+main {
+  position: fixed;
+  width: 50vw;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+  padding: 2% 2%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+#recent-scores {
+  width: 20vw;
+}
+
+#board {
+  border: 1px solid black;
+  margin-top: 2em;
+}
+
+#board li {
+  padding: 1px 10px;
+}
+
+#board li:nth-child(even) {
+  background-color: gainsboro;
+}
+
+#score-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+}
+
+#score-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: none;
+  box-shadow: 3px 3px 1px black;
+  padding: 2%;
+  cursor: pointer;
+}
+
+#add-score {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  margin-bottom: 1em;
+  border: 1px solid black;
+  height: 20px;
+}
+
+form button {
+  width: 40%;
+  align-self: flex-end;
+}
