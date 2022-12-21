@@ -80,7 +80,7 @@ In order to run this project you need:
 
 To run the project, execute the following command:
 
-> Go to that downloaded folder and open the index.html file and your good to go.
+> Open your teminal and set the downloaded folder as the working directory. Next, run `npm i` then `npm start`.
 
 ### Run tests
 
