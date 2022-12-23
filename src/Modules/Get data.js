@@ -4,6 +4,7 @@ export default async () => {
   await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/')
     .then((response) => response.json())
     .then((json) => {
+      json.result.sort((a, b) => b.score - a.score);
       json.result.forEach((i) => {
         const item = document.createElement('li');
         item.innerHTML = `<span>${i.user}</span> : <span>${i.score}</span>`;

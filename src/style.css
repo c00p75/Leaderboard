@@ -7,8 +7,8 @@
 
 main {
   position: fixed;
-  width: 50vw;
-  top: 40%;
+  width: 60vw;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 1px solid black;
@@ -28,6 +28,8 @@ form {
 #board {
   border: 1px solid black;
   margin-top: 2em;
+  height: 40vh;
+  overflow: auto;
 }
 
 #board li {
