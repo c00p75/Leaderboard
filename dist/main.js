@@ -129,6 +129,28 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 
 /***/ }),
 
+/***/ "./src/Modules/Get data.js":
+/*!*********************************!*\
+  !*** ./src/Modules/Get data.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {\n  const list = document.querySelector('#board ul');\n  const scores = document.createElement('ul');\n  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/')\n    .then((response) => response.json())\n    .then((json) => {\n      json.result.forEach((i) => {\n        const item = document.createElement('li');\n        item.innerHTML = `<span>${i.user}</span> : <span>${i.score}</span>`;\n        scores.appendChild(item);\n      });\n    });\n  document.querySelector('#board').replaceChild(scores, list);\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/Modules/Get_data.js?");
+
+/***/ }),
+
+/***/ "./src/Modules/Post data.js":
+/*!**********************************!*\
+  !*** ./src/Modules/Post data.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst userName = document.querySelector('#name');\nconst userScore = document.querySelector('#score');\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async () => {\n  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json',\n    },\n    body: JSON.stringify({\n      user: userName.value,\n      score: userScore.value,\n    }),\n  })\n    .then((response) => response.json());\n  userName.value = '';\n  userScore.value = '';\n});\n\n\n//# sourceURL=webpack://to-do-list/./src/Modules/Post_data.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -136,7 +158,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n // eslint-disable-line\n\n\nconst boardElement = document.querySelector('#board');\n\nconst fetchAPIData = () => {\n  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/', {})\n    .then(response => response.json())\n    .then(json => {\n      json.result.forEach((i) => {\n        const item = document.createElement('li');\n        item.innerHTML = `<span>${i.user}</span> : <span>${i.score}</span>`;\n        boardElement.appendChild(item);\n      });\n    });\n};\n\nconst postAPIData = (userName, userScore) => {\n  fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/', {\n    method: 'POST',\n    headers: {\n      'Content-Type': 'application/json'\n    },\n    body: JSON.stringify({\n      user: userName,\n      score: userScore,\n    }),\n  })\n    .then(response => response.json())\n    .then(json => console.log(json));\n};\n\n// postAPIData('cheez', 4);\nfetchAPIData();\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _Modules_Get_data_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Modules/Get data.js */ \"./src/Modules/Get data.js\");\n/* harmony import */ var _Modules_Post_data_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Modules/Post data.js */ \"./src/Modules/Post data.js\");\n // eslint-disable-line\n\n\n\n\ndocument.querySelector('DOMContentLoaded', (0,_Modules_Get_data_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])());\n\ndocument.querySelector('#refresh').addEventListener('click', () => {\n  (0,_Modules_Get_data_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n});\n\ndocument.querySelector('form').addEventListener('submit', (event) => {\n  event.preventDefault();\n  (0,_Modules_Post_data_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\n});\n\n//# sourceURL=webpack://to-do-list/./src/index.js?");
 
 /***/ })
 
