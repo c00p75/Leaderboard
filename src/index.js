@@ -1,4 +1,4 @@
-import _ from 'lodash'; // eslint-disable-line
+import _ from 'lodash';
 import './style.css';
 import fetchAPIData from './Modules/Get data.js';
 import postAPIData from './Modules/Post data.js';
