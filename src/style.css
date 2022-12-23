@@ -142,3 +142,37 @@ form button {
   width: 40%;
   align-self: flex-end;
 }
+
+@media only screen and (max-width: 768px) {
+  main {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100vw;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  #score-container {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+  .container:last-child {
+    margin-top: 2em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  h1 {
+    font-size: 150% !important;
+  }
+}
