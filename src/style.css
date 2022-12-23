@@ -5,14 +5,53 @@
   list-style: none;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgba(77, 6, 243, 0.5), rgba(180, 19, 19, 0.5));
+  border-radius: 10px;
+}
+
+#overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(-45deg, #f53232, #e76666, #67caee, #23d5ab);
+  opacity: 0.9;
+  mix-blend-mode: multiply;
+  background-size: 400% 400%;
+  animation: gradient 50s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 main {
   position: fixed;
-  width: 60vw;
+  z-index: 1;
+  width: 70vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid black;
+  border-radius: 5px;
   padding: 2% 2%;
+  background-color: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(10px);
+  font-family: 'Poppins', sans-serif;
 }
 
 form {
@@ -21,23 +60,46 @@ form {
   margin-top: 2em;
 }
 
-#recent-scores {
-  width: 20vw;
+h1 {
+  font-family: 'Monoton', sans-serif;
+}
+
+h2 {
+  font-family: 'Yeseva One', sans-serif;
+  color: white;
+}
+
+.container {
+  width: 28vw;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 10px 10px 0 black;
+  background-image: url('./Images/bg2.jpg');
+}
+
+.container:last-child {
+  padding: 5%;
 }
 
 #board {
-  border: 1px solid black;
   margin-top: 2em;
   height: 40vh;
   overflow: auto;
+  scrollbar-width: thin;
+  border-bottom-left-radius: 5px;
 }
 
 #board li {
-  padding: 1px 10px;
+  padding: 10px;
 }
 
 #board li:nth-child(even) {
   background-color: gainsboro;
+}
+
+#board li:nth-child(odd) {
+  background-color: white;
 }
 
 #score-container {
@@ -49,12 +111,16 @@ form {
 #score-heading {
   display: flex;
   justify-content: space-between;
+  padding: 10% 5% 0;
 }
 
 button {
-  background: none;
-  box-shadow: 3px 3px 1px black;
-  padding: 2%;
+  background: whitesmoke;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgb(255, 255, 255);
+  padding: 3%;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -65,8 +131,10 @@ button {
 
 form input {
   margin-bottom: 1em;
-  border: 1px solid black;
-  height: 20px;
+  border: 0;
+  height: 40px;
+  padding: 2% 5%;
+  border-radius: 4px;
 }
 
 form button {
