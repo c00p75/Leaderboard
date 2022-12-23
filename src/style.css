@@ -8,11 +8,26 @@
 ::-webkit-scrollbar {
   width: 10px;
   background-color: rgb(255, 255, 255);
+  border-bottom-right-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(rgba(77, 6, 243, 0.5), rgba(180, 19, 19, 0.5));
   border-radius: 10px;
+}
+
+main {
+  position: fixed;
+  z-index: 1;
+  width: 80vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.623);
+  backdrop-filter: blur(10px);
+  font-family: 'Poppins', sans-serif;
 }
 
 #overlay {
@@ -40,20 +55,6 @@
   }
 }
 
-main {
-  position: fixed;
-  z-index: 1;
-  width: 70vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 5px;
-  padding: 2% 2%;
-  background-color: rgba(255, 255, 255, 0.623);
-  backdrop-filter: blur(10px);
-  font-family: 'Poppins', sans-serif;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -70,7 +71,7 @@ h2 {
 }
 
 .container {
-  width: 28vw;
+  width: 35vw;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
@@ -83,8 +84,8 @@ h2 {
 }
 
 #board {
-  margin-top: 2em;
-  height: 40vh;
+  margin-top: 1.5em;
+  height: 50vh;
   overflow: auto;
   scrollbar-width: thin;
   border-bottom-left-radius: 5px;
@@ -105,13 +106,13 @@ h2 {
 #score-container {
   display: flex;
   justify-content: space-between;
-  padding: 5%;
+  padding: 2%;
 }
 
 #score-heading {
   display: flex;
   justify-content: space-between;
-  padding: 10% 5% 0;
+  padding: 1.5em 2em 0;
 }
 
 button {
