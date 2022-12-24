@@ -91,15 +91,38 @@ h2 {
   border-bottom-left-radius: 5px;
 }
 
-#board li {
-  padding: 10px;
+#board table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-#board li:nth-child(even) {
+#board thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 1px 0 black;
+}
+
+#board th {
+  text-align: left;
+  padding-left: 10px;
+}
+
+#board td {
+  padding: 10px;
+  width: 45%;
+}
+
+#board td:nth-child(2) {
+  width: 5%;
+}
+
+#board tr:nth-child(even) {
   background-color: gainsboro;
 }
 
-#board li:nth-child(odd) {
+#board tr:nth-child(odd) {
   background-color: white;
 }
 
