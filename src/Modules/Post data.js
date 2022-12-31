@@ -2,7 +2,7 @@ const userName = document.querySelector('#name');
 const userScore = document.querySelector('#score');
 
 export default async () => {
-  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/', {
+  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/kMVPWXdULV60GDvFOZbP/scores/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
