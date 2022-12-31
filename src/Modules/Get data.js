@@ -6,6 +6,7 @@ export default async () => {
     .then((response) => response.json())
     .then((json) => {
       json.result.sort((a, b) => b.score - a.score);
+      document.querySelector('#top-player').innerHTML = `<span>Top Player: ${json.result[0].user}🏆</<span>`;
       json.result.forEach((i) => {
         const row = document.createElement('tr');
         row.innerHTML = `<td>${i.user}</td> <td>:</td> <td>${i.score}</td>`;

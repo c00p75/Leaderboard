@@ -18,16 +18,26 @@
 
 main {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   width: 80vw;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px;
   padding: 2%;
-  background-color: rgba(255, 255, 255, 0.623);
-  backdrop-filter: blur(10px);
   font-family: 'Poppins', sans-serif;
+}
+
+#overlay2 {
+  position: fixed;
+  z-index: 2;
+  width: 80vw;
+  height: 88vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0.65);
+  backdrop-filter: blur(100px);
 }
 
 #overlay {
@@ -70,17 +80,46 @@ h2 {
   color: white;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  text-align: center;
+  font-size: 0.8em;
+  color: black;
+  z-index: 1;
+}
+
 .container {
   width: 35vw;
-  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 10px 10px 0 black;
-  background-image: url('./Images/bg2.jpg');
+  background-image: url('./Images/bg.jpg');
 }
 
 .container:last-child {
   padding: 5%;
+}
+
+#title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#confetti {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  height: 4em;
+  width: 50%;
+}
+
+#top-player {
+  padding: 0 10%;
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
 #board {
@@ -94,6 +133,7 @@ h2 {
 #board table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
 }
 
 #board thead {
@@ -166,6 +206,14 @@ form button {
   align-self: flex-end;
 }
 
+.rocket-cursor {
+  cursor: url(./Images/Rocket.png), auto;
+}
+
+.ufo-cursor {
+  cursor: url(./Images/UFO.png), auto;
+}
+
 @media only screen and (max-width: 768px) {
   main {
     position: relative;
@@ -175,10 +223,34 @@ form button {
     top: 0;
     left: 0;
     transform: translate(0, 0);
+    padding-bottom: 2em;
   }
 
   h1 {
     text-align: center;
+  }
+
+  footer {
+    position: relative;
+  }
+
+  #overlay2 {
+    opacity: 0;
+  }
+
+  #title {
+    flex-direction: column;
+  }
+
+  #top-player {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  #confetti {
+    top: 4em;
+    height: 3em;
+    width: 100%;
   }
 
   #score-container {

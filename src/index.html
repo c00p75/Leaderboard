@@ -10,10 +10,15 @@
 </head>
 <body>
   <div id="overlay"></div>
+  <div id="overlay2"></div>
   <main>
-    <h1>Leaderboard</h1>
+    <div id="title">
+      <h1>Leaderboard</h1>
+      <div id="top-player"></div>
+      <canvas id="confetti"></canvas>
+    </div>    
     <div id="score-container">
-      <div class="container">
+      <div class="container rocket-cursor">
         <div id="score-heading">
           <h2>Recent scores</h2>
           <button id="refresh">Refresh</button>
@@ -22,7 +27,7 @@
           <table></table>
         </div>        
       </div>
-      <div class="container">
+      <div class="container ufo-cursor">
         <h2>Add your score</h2>
         <form>
           <input type="text" name="name" id="name" placeholder="Your name" required>
@@ -32,5 +37,8 @@
       </div>
     </div>
   </main>
+  <footer>
+    <span>Copyright © 2022 Penda</span>
+  </footer>
 </body>
 </html>
