@@ -1,6 +1,6 @@
 import './style.css';
 import JSConfetti from 'js-confetti';
-import fetchAPIData from './Modules/Get data.js';
+import { fetchAPIData } from './Modules/Get data.js';
 import postAPIData from './Modules/Post data.js';
 
 // Fetch data when DOM loads
