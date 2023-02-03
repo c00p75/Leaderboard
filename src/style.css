@@ -94,7 +94,7 @@ footer {
   width: 35vw;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
-  box-shadow: 0 10px 10px 0 black;
+  box-shadow: 0 0 3px blueviolet;
   background-image: url('./Images/bg.jpg');
 }
 
@@ -131,6 +131,7 @@ footer {
 }
 
 #board table {
+  background-color: white;
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -158,8 +159,9 @@ footer {
   width: 5%;
 }
 
-#board tr:nth-child(even) {
+#board tr:nth-child(even) * {
   background-color: gainsboro;
+  border: 2px solid gainsboro;
 }
 
 #board tr:nth-child(odd) {

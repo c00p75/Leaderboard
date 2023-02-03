@@ -1,8 +1,10 @@
-export default async () => {
+export const gameId = 'JbaM8L1bOAiXmHviDL9y ';
+
+export const fetchAPIData = async () => {
   const list = document.querySelector('#board table');
   const scores = document.createElement('table');
   scores.innerHTML = '<thead><th>User Name</th><th></th><th>Points</th></thead>';
-  await fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/mkTCYEA17yEVtm11XsOo/scores/')
+  await fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`)
     .then((response) => response.json())
     .then((json) => {
       json.result.sort((a, b) => b.score - a.score);
